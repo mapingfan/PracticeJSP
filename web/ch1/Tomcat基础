@@ -1,0 +1,16 @@
+# Tomcat基础知识
+
+- 配置`JDk`,设置`java_home=d:/jdk1.7`,`Path=d:/jdk1.7/bin`.
+- 启动`Tomcat`,两个方法启动，一是`startup.bat`，二是`catalina.bat`。
+- `Tomcat`安装目录
+  - `bin`目录 启动目录，存放启动脚本
+  - `conf`目录 配置文件目录，配置全局
+  - `lib`目录 库文件目录
+  - `logs`目录 日志目录
+  - `temp`目录 
+  - `webapps`目录 `web`应用目录，可以把自己的应用都放在这个目录下
+  - `work`目录 `jsp`文件转换为`java`文件以及编译产生的`.class`文件
+- 端口配置，默认使用`8080`端口，如果冲突，可以在`conf/server.xml`文件里更改。如果其他程序没有占用`80`端口，我们可以设置为`80`端口，这样访问时候就不需要输入端口号，默认为`80`.
+- `webapps根目录` 把写好的`jsp`文件放到`webapp/root`目录下就可以直接运行。
+- `webapps`下可以自己建立应用目录，把自己的相关文件放到里面即可
+- 虚拟`web应用`目录。通过更改`conf/server.xml`文件中的`<Context path=...>标签`
