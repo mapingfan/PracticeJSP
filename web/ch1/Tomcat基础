@@ -13,4 +13,19 @@
 - 端口配置，默认使用`8080`端口，如果冲突，可以在`conf/server.xml`文件里更改。如果其他程序没有占用`80`端口，我们可以设置为`80`端口，这样访问时候就不需要输入端口号，默认为`80`.
 - `webapps根目录` 把写好的`jsp`文件放到`webapp/root`目录下就可以直接运行。
 - `webapps`下可以自己建立应用目录，把自己的相关文件放到里面即可
-- 虚拟`web应用`目录。通过更改`conf/server.xml`文件中的`<Context path=...>标签`
+- 虚拟`web应用`目录。通过更改`conf/server.xml`文件中的`<Context path=...>标签`，可以把非`webapps`下的目录映射到这个目录底下。
+
+```
+<!--
+在server.xml文件中添加如下行，添加位置在</host>之后。-->
+<Context path="/apple" docBase="D:\Mybook\zhang" debug="0" reloadable="true"/>
+<Context path="/cloud" docBase="E:\Mybook" debug="0" reloadable="true"/>
+注意Context区分大小写。
+当我们在文件中添加了如下标签，那么我们可以看到，虽然E:\Mybook目录并不在webapps下，但是我们可以这样访问
+
+localhot:8080/cloud/index.jsp；
+
+这样看起来，cloud目录好像就在webapps目录底下，但实际的目录却在E盘。
+
+这样就完成了目录的映射。
+```
