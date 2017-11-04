@@ -1,0 +1,34 @@
+
+```
+<%! %> 在这个标签里声明的变量会被当成成员变量；和在页面声明的位置没有关系；直到服务器被关闭才被释放。
+因为只会实例化出一个对象，所以当多个线程请求时，线程之间会共享这些成员变量，会存在一致性问题。
+
+<%= %>里面只能放表达式，不能放语句。而且记得不要加多余的空格。
+```
+
+- JSP页面中的注释
+    - html注释
+    - jsp三种注释（类似Java的注释）
+编译的时候，JSP引擎会忽略注释以及html标签；
+
+- page指令
+    - import 引入java库文件；
+    - contentType 设置MIME类型，告诉客户端该如何处理接收的信息
+    - language 只能指定为Java
+    - session 取值为true或false。表示是否使用内置session对象；
+    - buffer 内置对象out的输出缓冲区，可以设置为none，默认8kb;
+    - autoFlush 指定上面的缓冲区填满是否自动刷新，默认为true
+    - isThreadSafe 默认为true，可以多个线程交替访问，设置为false时，一次只能一个线程访问，访问结束其余线程才能访问。参加例子2-7，线程设置为true时，由于这个方法不是同步方法，线程可以交替访问。当设置为false时，只能等待一个线程执行完，下一个线程才能执行。
+    - pageEncoding
+    - info 准备一个jsp页面常用的字符串，比如
+```
+<%@ page info = "we are students" %>然后在jsp页面中可以调用这个方法getServletInfo获得字符串。
+```
+
+- include指令 用于插入静态文件，不局限与网页，可以是txt文件。插入一个jsp文件时，引擎会帮我们自动进行合并，所以不用担心两个页面都写了相同的标签。引擎会把合适的内容插入进去。
+- jsp动作标记
+    - include动作标记
+    <jsp:include page=url />
+    <jsp:include page=url>
+        <jsp:param name= xx value=xx > 
+
