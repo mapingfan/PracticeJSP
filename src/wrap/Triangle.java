@@ -1,21 +1,16 @@
 package wrap;
 
-public class Triangle {
+import java.io.Serializable;
+
+public class Triangle implements Serializable {
     private double sideA;
     private double sideB;
     private double sideC;
-    private boolean isTriangle;
+    private boolean triangle;
     private double area;
 
     public Triangle() {
     }
-
-    /**
-     *
-     * 我们不替isTriangle, area设置setter,因为在jsp页面中，不需要设置这个属性，只需要获得。
-     */
-
-
 
     public double getSideA() {
         return sideA;
@@ -41,31 +36,19 @@ public class Triangle {
         this.sideC = sideC;
     }
 
-    public double getArea() throws Exception {
+    public boolean isTriangle() {
+        triangle = sideA + sideB > sideC && sideB + sideC > sideA && sideC + sideA > sideB;
+        return triangle;
+
+    }
+
+    public double getArea() {
         if (isTriangle()) {
             double q = (sideA + sideB + sideC) / 2;
-            area = Math.sqrt(q * (q - sideC) * (q - sideB) * (q - sideA));
-            setArea(area);
+            area = Math.sqrt(q * (q - sideA) * (q - sideB) * (q - sideC));
         } else {
-            throw new Exception("参数错误");
+            area = 0;
         }
         return area;
-    }
-
-    public boolean isTriangle() {
-        if (sideA + sideB > sideC && sideB + sideC > sideA && sideC + sideA > sideB) {
-            setTriangle(true);
-        } else {
-            setTriangle(false);
-        }
-        return isTriangle;
-    }
-
-    public void setTriangle(boolean triangle) {
-        isTriangle = triangle;
-    }
-
-    public void setArea(double area) {
-        this.area = area;
     }
 }

@@ -1,14 +1,13 @@
 <%--
 学习JavaBean的使用；JavaBean其实就是一种规范的类。
-在页面中使用JavaBean的目的其实很简单，内容分离。
+在页面中使用JavaBean的目 的其实很简单，内容分离。
 当我们使用JavaBean时，页面中应该都是标签语言，不应该出现Java程序片。
 --%>
 <%@ page contentType="text/html;charset=utf-8" language="java" pageEncoding="UTF-8" %>
-<%@ page import="wrap.Triangle" %>
 <jsp:useBean id="myTriangle" class="wrap.Triangle" type="wrap.Triangle" scope="page"/>
 <html>
 <head>
-    <title>Triangle</title>
+    <title>wrap.Triangle</title>
 </head>
 <body>
 <form action="" method="post">
@@ -44,7 +43,7 @@
     <jsp:getProperty name="myTriangle" property="sideC"/>
 </p>
 <p>这三边能构成一个三角形吗？
-    <jsp:getProperty name="myTriangle" property="isTriangle"/>
+    <jsp:getProperty name="myTriangle" property="triangle"/>
 </p>
 <p>面积是：
     <jsp:getProperty name="myTriangle" property="area"/>
