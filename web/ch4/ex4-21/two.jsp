@@ -1,0 +1,12 @@
+<%@ page contentType="text/html;charset=gbk" language="java" %>
+<%@ taglib tagdir="/WEB-INF/tags" prefix="cy"%>
+<html>
+<head>
+    <title>Title</title>
+</head>
+<body>
+<p>ª∂”≠∑√Œ ±æ’æ</p>
+<cy:count/>
+<a href="one.jsp">»•Õ˘one.jsp</a>
+</body>
+</html>
