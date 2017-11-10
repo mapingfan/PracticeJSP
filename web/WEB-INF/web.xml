@@ -21,4 +21,13 @@
         <servlet-name>hhh</servlet-name>
         <url-pattern>/ch9/result</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ggg</servlet-name>
+        <servlet-class>handle.Login</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ggg</servlet-name>
+        <url-pattern>/ch9/loginServlet</url-pattern>
+    </servlet-mapping>
 </web-app>

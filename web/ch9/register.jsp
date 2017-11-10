@@ -8,7 +8,7 @@
 <form action="/ch9/result" method="post">
     <table>
         <tr align="center">
-            <td colspan="2">注册</td>
+            <td colspan="2"><a href="register.jsp"> 注册</a>&nbsp;<a href="login.jsp"> 登录</a></td>
         </tr>
         <tr>
             <td>用户名称：<input type="text" required name="userName"></td>
