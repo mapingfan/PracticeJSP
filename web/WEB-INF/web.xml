@@ -12,4 +12,13 @@
         <servlet-name>hello</servlet-name>
         <url-pattern>/ch9/looArea</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>hhh</servlet-name>
+        <servlet-class>handle.Register</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>hhh</servlet-name>
+        <url-pattern>/ch9/result</url-pattern>
+    </servlet-mapping>
 </web-app>
