@@ -3,6 +3,10 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
+    <context-param>
+        <param-name>school</param-name>
+        <param-value>whu</param-value>
+    </context-param>
 
     <servlet>
         <servlet-name>hello</servlet-name>
@@ -29,5 +33,22 @@
     <servlet-mapping>
         <servlet-name>ggg</servlet-name>
         <url-pattern>/ch9/loginServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>testInitParam</servlet-name>
+        <servlet-class>handle.TestInitParam</servlet-class>
+        <init-param>
+            <param-name>p1</param-name>
+            <param-value>p111</param-value>
+        </init-param>
+        <init-param>
+            <param-name>p2</param-name>
+            <param-value>p2222</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>testInitParam</servlet-name>
+        <url-pattern>/testInitParam</url-pattern>
     </servlet-mapping>
 </web-app>
