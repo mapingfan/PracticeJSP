@@ -4,6 +4,7 @@
 <%@ page import="java.sql.Statement" %>
 <%@ page contentType="text/html;charset=utf-8" language="java" %>
 <%
+    request.setCharacterEncoding("utf-8");
     int id = Integer.parseInt(request.getParameter("id"));
     String title = request.getParameter("title");
     String content = request.getParameter("content");
@@ -24,8 +25,7 @@
     preparedStatement.setString(3, title);
     preparedStatement.setString(4, content);
     preparedStatement.executeUpdate();
-
-
+    response.sendRedirect("article.jsp");
     //判断原先是不是叶子节点，如果是，则父节点更改，如果不是，不用处理。
 
 %>
